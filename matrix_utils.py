@@ -7,10 +7,20 @@ def print_matrix(matrix: np.ndarray) -> None:
             print(matrix[i, j], end=" ")
         print("] ")
 
-        
+
 def matrix_scalar_mult(matrix: np.ndarray, value: int) -> np.ndarray:
     result = np.zeros(matrix.shape)
     for i in range(matrix.shape[0]):
         for j in range(matrix.shape[1]):
             result[i, j] = matrix[i, j] * value
+    return result
+
+def matrix_addition(matrix1: np.ndarray, matrix2: np.ndarray) -> np.ndarray:
+    if matrix1.shape != matrix2.shape:
+        raise ValueError(f"Missmatch in shapes{matrix1.shape}, {matrix2.shape}")
+    
+    result = np.zeros(matrix1.shape)
+    for i in range(matrix1.shape[0]):
+        for j in range(matrix1.shape[1]):
+            result[i, j] = matrix1[i, j] + matrix2[i, j]
     return result
