@@ -24,3 +24,11 @@ def matrix_addition(matrix1: np.ndarray, matrix2: np.ndarray) -> np.ndarray:
         for j in range(matrix1.shape[1]):
             result[i, j] = matrix1[i, j] + matrix2[i, j]
     return result
+
+def matrix_transpose(matrix: np.ndarray) -> np.ndarray:
+    result = np.zeros((matrix.shape[1], matrix.shape[0]))
+    print(matrix.shape, result.shape)
+    for i in range(matrix.shape[0]):
+        for j in range(matrix.shape[1]):
+            result[j, i] = matrix[i, j]
+    return result
