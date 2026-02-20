@@ -10,7 +10,7 @@ def matrix_mult(matrix1: np.ndarray, matrix2: np.ndarray) -> np.ndarray:
         for j in range(result.shape[1]):
             for k in range(matrix1.shape[1]):
                 result[i, j] += matrix1[i, k] * matrix2[k, j]
-    matrix_utils.print_matrix(result)
+    return result
 
 
 #sample1 = np.array([[1,2,3],[4,5,6]])
