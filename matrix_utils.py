@@ -44,3 +44,26 @@ def matrix_mult(matrix1: np.ndarray, matrix2: np.ndarray) -> np.ndarray:
             for k in range(matrix1.shape[1]):
                 result[i, j] += matrix1[i, k] * matrix2[k, j]
     return result
+
+
+def matrix_det_2(matrix: np.ndarray) -> float:
+    return (matrix[0,0] * matrix[1,1]) - (matrix[0,1] * matrix[1,0])
+
+
+def matrix_det_small(matrix: np.ndarray) -> float:
+    m = matrix.shape[0]
+    n = matrix.shape[1]
+    print(m, n)
+    if (n != m):
+        raise ValueError(f"The matrix is not square {matrix.shape}")
+    if (m > 3):
+        raise ValueError(f"The matrix is too large, use matrix_det function instead {matrix.shape}")
+
+    if (m == 2):
+        return matrix_det_2(matrix)
+    if (m == 3):
+        result = 0
+        for i in range(3):
+            minor = np.delete(np.delete(matrix, 0, axis = 0), i, axis = 1)
+            result += (-1)**i * matrix[0,i] * matrix_det_2(minor)
+        return result
