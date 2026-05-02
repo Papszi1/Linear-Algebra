@@ -1,4 +1,4 @@
-import matrix_utils
+import python.matrix_utils as matrix_utils
 import numpy as np
 
 def matrix_mult(matrix1: np.ndarray, matrix2: np.ndarray) -> np.ndarray:

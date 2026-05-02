@@ -1,4 +1,4 @@
-import matrix_utils
+import python.matrix_utils as matrix_utils
 import numpy as np
 
 def identity_matrix_gen(value: int) -> np.ndarray:

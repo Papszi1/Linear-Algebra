@@ -1,4 +1,4 @@
-from matrix_utils import print_matrix
+from python.matrix_utils import print_matrix
 
 import numpy as np
 

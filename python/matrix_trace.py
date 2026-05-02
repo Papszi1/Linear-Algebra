@@ -1,4 +1,4 @@
-import matrix_utils
+import python.matrix_utils as matrix_utils
 import numpy as np
 
 def matrix_trace(matrix: np.ndarray) -> float:
